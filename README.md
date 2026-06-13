@@ -1,3 +1,14 @@
+---
+title: Fake Call Detector
+emoji: 📞
+colorFrom: red
+colorTo: orange
+sdk: gradio
+sdk_version: "4.44.0"
+app_file: app.py
+pinned: false
+---
+
 # Fake Call Detector 📞🔍
 
 An AI-powered scam call detection system combining **audio forensics**, **speech-to-text**, and **LLM-based NLP** to identify fraudulent calls with detailed analysis reports.
