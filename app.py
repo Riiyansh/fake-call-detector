@@ -183,6 +183,7 @@ with gr.Blocks(
         fn=analyze_call,
         inputs=[audio_input, text_input],
         outputs=[verdict_html, intent_html, flags_html, audio_html, transcript_out, error_out],
+        api_name=False,
     )
 
 demo.launch(server_name="0.0.0.0")
