@@ -20,7 +20,8 @@ def analyze_call(audio_file, text_input):
 
     try:
         if audio_file is not None:
-            result = detect(audio_file)
+            audio_path = audio_file.name if hasattr(audio_file, 'name') else audio_file
+            result = detect(audio_path)
         else:
             from audio_analyzer import AudioAnalysisResult
             from text_analyzer import analyze_text
@@ -155,7 +156,7 @@ with gr.Blocks(
 
     with gr.Row():
         with gr.Column(scale=1):
-            audio_input = gr.Audio(label="Upload Call Recording", type="filepath")
+            audio_input = gr.File(label="Upload Call Recording (.wav, .mp3, .m4a)", file_types=["audio"])
             text_input = gr.Textbox(label="Or paste transcript", placeholder="Paste call transcript here...", lines=5)
             analyze_btn = gr.Button("🔍 Analyze Call", variant="primary", size="lg")
             error_out = gr.Markdown()
